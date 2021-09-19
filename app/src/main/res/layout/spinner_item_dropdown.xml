@@ -1,0 +1,12 @@
+<TextView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/textView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:layout_marginStart="@dimen/margin_horizontal_small"
+	android:textColor="@color/black"
+	android:fontFamily="@font/azeret_mono_regular"
+	android:textSize="20sp"
+	app:layout_constraintStart_toStartOf="parent"
+	app:layout_constraintTop_toTopOf="parent"/>

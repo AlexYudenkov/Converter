@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/main_navigation"
+	app:startDestination="@id/startFragment">
+
+	<fragment
+		android:id="@+id/startFragment"
+		android:name="ru.alexydenkov.converter.currencylist.ui.CurrencyFragment"
+		android:label="ffff"
+		tools:layout="@layout/recycler_view">
+		<action android:id="@+id/action_startFragment_to_blankFragment"
+			app:destination="@id/blankFragment">
+		</action>
+	</fragment>
+	<fragment android:id="@+id/blankFragment"
+		android:name="ru.alexydenkov.converter.convertcurrency.ui.ConvertCurrencyFragment"
+		android:label="converter_fragment"
+		tools:layout="@layout/converter_fragment">
+	</fragment>
+
+</navigation>

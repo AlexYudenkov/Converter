@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<item name="loaderlayout"
+		type="id"/>
+	<item name="loader_layout"
+		type="id"/>
+</resources>

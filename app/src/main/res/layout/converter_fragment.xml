@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+	android:id="@+id/swipe_refresh"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/content"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".convertcurrency.ui.ConvertCurrencyFragment">
+
+		<LinearLayout
+			android:id="@id/currency_title"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/margin_horizontal"
+			android:layout_marginTop="@dimen/margin_top_10"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent">
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/azeret_mono_regular"
+				android:textSize="20sp"
+				android:text="@string/title"/>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/margin_horizontal"
+			android:layout_marginTop="@dimen/margin_top_20"
+			android:background="@drawable/shape_converter"
+			android:weightSum="5"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/arrow"
+			app:layout_constraintEnd_toEndOf="parent">
+			<Spinner
+				android:id="@+id/spinner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="@dimen/margin_horizontal"
+				android:layout_marginVertical="@dimen/margin_top_10"
+				android:layout_weight="2"
+				android:backgroundTint="@color/white"
+				android:minHeight="48dp"
+				tools:ignore="SpeakableTextPresentCheck"/>
+			<TextView
+				android:id="@+id/currency_value"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_marginHorizontal="@dimen/margin_horizontal_small"
+				android:layout_marginVertical="@dimen/margin_top_10"
+				android:layout_weight="3"
+				android:textSize="20sp"
+				android:textColor="@color/white"/>
+		</LinearLayout>
+
+		<ImageView
+			android:id="@+id/arrow"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
+			android:src="@drawable/ic_keyboard_backspace_24px"
+			android:rotation="-90"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+			app:layout_constraintHorizontal_bias="0.498"/>
+		<LinearLayout
+			android:id="@+id/linearLayout2"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginHorizontal="@dimen/margin_horizontal"
+			android:layout_marginTop="16dp"
+			android:background="@drawable/shape_converter"
+			android:gravity="center"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/currency_title">
+			<TextView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_vertical"
+				android:layout_marginHorizontal="@dimen/margin_horizontal_small"
+				android:text="@string/ruble"
+				android:textColor="@color/white"
+				android:textSize="20sp"/>
+			<ImageView android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:src="@drawable/ic_ruble_currency_sign">
+			</ImageView>
+			<com.google.android.material.textfield.TextInputLayout
+				android:id="@+id/textInputLayout"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="20dp"
+				android:layout_marginVertical="@dimen/margin_top_10"
+				app:suffixText="₽"
+				app:suffixTextColor="@color/white"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:boxStrokeColor="@color/input_selector"
+				app:hintTextColor="@color/white"
+				android:textColorHint="@color/white"
+				style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+				<com.google.android.material.textfield.TextInputEditText
+					android:id="@+id/currency_input"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textCursorDrawable="@drawable/ic_cursor"
+					android:textColor="@color/white"
+					android:textColorHint="@color/white"
+					android:hint="@string/input_summ"
+					android:inputType="number"/>
+			</com.google.android.material.textfield.TextInputLayout>
+
+		</LinearLayout>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+	<LinearLayout
+		android:id="@id/loader_layout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<ImageView
+			android:id="@+id/loader"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:clickable="true"
+			android:focusable="true"
+			app:srcCompat="@drawable/ic_vector_anim_loader"/>
+		<ImageView
+			android:id="@+id/error"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:src="@drawable/ic_error"/>
+	</LinearLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

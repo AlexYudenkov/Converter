@@ -1,0 +1,7 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+	<style
+		android:parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		name="LoginTextInputLayoutStyle">
+		<item name="android:colorControlActivated">@color/white</item>
+	</style>
+</resources>
